@@ -1,0 +1,309 @@
+<!DOCTYPE HTML> 
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <meta charset="utf-8"/>
+        <title>個人課程清單</title>
+        <script type ="text/javascript">
+            function over(element){
+                element.style.color="red";
+            }
+            function out(element){
+                element.style.color="black"; 
+            }
+        </script>
+        <style type="text/css">
+            .head{
+                background-color:#003344;color:white;font-weight:bold;font-size:40px;
+                text-align:center;padding:10px
+            } 
+    
+            .frame{
+                justify-content:center;
+                display:flex;      /*讓項目水平*/
+                text-align:center
+            }   
+            .left{
+                background-color:#003344;
+         
+                flex:none;             /*固定配置:參考寬度*/
+                width:20%;
+            }
+            .right{
+                background-color:#cccccc;
+                flex:none;             /*固定配置:參考寬度*/
+                width:59%; 
+                display:flex;      /*讓項目水平*/
+            } 
+            .rightthing{
+                flex:none;             /*固定配置:參考寬度*/
+                width:100%; 
+            }
+            
+            table{
+          
+                width:900px;border:2px solid #888888;
+            }
+            td{
+                border:2px solid #888888;padding:10px;
+            }
+            tr:nth-child(1){
+                background-color:#7788aa;color:#ffffff;
+            }
+            tr:nth-child(even){
+                background-color:#e8e8e8;
+            }
+            .box{
+                border:3px solid red; 
+            } 
+            form>select{
+                padding:5px 25px;border-radius:5px; 
+            }   
+        </style>
+    </head>
+    <body style=" margin:0px; background-image:url('bgi.png');background-size:cover;" >   
+        <div class="head">個人課程清單</div>
+        <img style="vertical-align:bottom" height="100" width="100%" src="/350.jpg">
+    
+        <div class="frame">
+  
+            <div class="left">
+                <div style="text-align:center;color:white;">
+                    <tr>
+                        <td><font size="6"><b>累積學分:</b></font></td>
+                    </tr>
+                    <tr>
+                       <td><font  size="6"><b>{{pointall}}</b></font></td> 
+                    </tr> 
+                    <div style="color:white;font-size:40px"><h3>課程清單<h3></div>
+                    <div><h3><u><a style="color:white;font-size:30px" href="/personal.if">個人資料</a></u><h3></div>
+                       
+                    
+                    <div><a style="color:white;" href = "/member"><button>返回首頁</button></a></div>
+                </div>
+                
+            </div>
+       
+       
+            <div class="right">
+                <div class="rightthing">
+                   
+                    <table>                                                                            
+                        <tr>
+                            <td>課程代碼</td> 
+                            <td>課程類別</td>
+                            <td>科目</td> 
+                            <td>老師</td>                          
+                            <td>年級</td>
+                            <td>學分</td>
+                            <td>教室</td>
+                            <td>節次</td>
+                            <td>課程介紹</td>
+                        </tr>
+                             
+                        <tr>
+                            <td>{{code1}}</td> 
+                            <td>{{field1}}</td>
+                            <td>{{name1}}</td>   
+                            <td>{{teacher1}}</td>  
+                            <td>{{grade1}}</td>              
+                            <td>{{point1}}</td>
+                            <td>{{room1}}</td>
+                            <td>星期{{day1}}/{{start1}}-{{end1}}</td>
+                            <td>{{information1}}</td>
+                        
+                        </tr>
+                                    
+                        <tr>
+                            <td>{{code2}}</td> 
+                            <td>{{field2}}</td>
+                            <td>{{name2}}</td>   
+                            <td>{{teacher2}}</td>  
+                            <td>{{grade2}}</td>              
+                            <td>{{point2}}</td>
+                            <td>{{room2}}</td>
+                            <td>星期{{day2}}/{{start2}}-{{end2}}</td>
+                            <td>{{information2}}</td>
+                          
+                        </tr>
+                        <form action = " /lessonout3 " method = "post" id="myform3"></form>             
+                        <tr>
+                            <td>{{code3}}</td> 
+                            <td>{{field3}}</td>
+                            <td>{{name3}}</td>   
+                            <td>{{teacher3}}</td>  
+                            <td>{{grade3}}</td>              
+                            <td>{{point3}}</td>
+                            <td>{{room3}}</td>
+                            <td>星期{{day3}}/{{start3}}-{{end3}}</td>
+                            <td>{{information3}}</td>
+                           
+                        </tr>
+                                 
+                        <tr>
+                            <td>{{code4}}</td> 
+                            <td>{{field4}}</td>
+                            <td>{{name4}}</td>   
+                            <td>{{teacher4}}</td>  
+                            <td>{{grade4}}</td>              
+                            <td>{{point4}}</td>
+                            <td>{{room4}}</td>
+                            <td>星期{{day4}}/{{start4}}-{{end4}}</td>
+                            <td>{{information4}}</td>
+                          
+                        </tr>
+                               
+                        <tr>
+                            <td>{{code5}}</td>
+                            <td>{{field5}}</td>
+                            <td>{{name5}}</td>   
+                            <td>{{teacher5}}</td>  
+                            <td>{{grade5}}</td>              
+                            <td>{{point5}}</td>
+                            <td>{{room5}}</td>
+                            <td>星期{{day5}}/{{start5}}-{{end5}}</td>
+                            <td>{{information5}}</td>
+                          
+                        </tr>
+                                  
+                        <tr>
+                            <td>{{code6}}</td> 
+                            <td>{{field6}}</td>
+                            <td>{{name6}}</td>   
+                            <td>{{teacher6}}</td>  
+                            <td>{{grade6}}</td>              
+                            <td>{{point6}}</td>
+                            <td>{{room6}}</td>
+                            <td>星期{{day6}}/{{start6}}-{{end6}}</td>
+                            <td>{{information6}}</td>
+                           
+                        </tr>
+                                 
+                        <tr>
+                            <td>{{code7}}</td>
+                            <td>{{field7}}</td>
+                            <td>{{name7}}</td>   
+                            <td>{{teacher7}}</td>  
+                            <td>{{grade7}}</td>              
+                            <td>{{point7}}</td>
+                            <td>{{room7}}</td>
+                            <td>星期{{day7}}/{{start7}}-{{end7}}</td>
+                            <td>{{information7}}</td>
+                            
+                        </tr>
+                                
+                        <tr>
+                            <td>{{code8}}</td> 
+                            <td>{{field8}}</td>
+                            <td>{{name8}}</td>   
+                            <td>{{teacher8}}</td>  
+                            <td>{{grade8}}</td>              
+                            <td>{{point8}}</td>
+                            <td>{{room8}}</td>
+                            <td>星期{{day8}}/{{start8}}-{{end8}}</td>
+                            <td>{{information8}}</td>
+                            
+                        </tr>
+                                
+                        <tr>
+                            <td>{{code9}}</td>
+                            <td>{{field9}}</td>
+                            <td>{{name9}}</td>   
+                            <td>{{teacher9}}</td>  
+                            <td>{{grade9}}</td>              
+                            <td>{{point9}}</td>
+                            <td>{{room9}}</td>
+                            <td>星期{{day9}}/{{start9}}-{{end9}}</td>
+                            <td>{{information9}}</td>
+                            
+                        </tr>
+                        <form action = " /lessonout10 " method = "post" id="myform10"></form>             
+                        <tr>
+                            <td>{{code10}}</td>
+                            <td>{{field10}}</td>
+                            <td>{{name10}}</td>   
+                            <td>{{teacher10}}</td>  
+                            <td>{{grade10}}</td>              
+                            <td>{{point10}}</td>
+                            <td>{{room10}}</td>
+                            <td>星期{{day10}}/{{start10}}-{{end10}}</td>
+                            <td>{{information10}}</td>
+                           
+                        </tr>
+                                    
+                        <tr>
+                            <td>{{code11}}</td> 
+                            <td>{{field11}}</td>
+                            <td>{{name11}}</td>   
+                            <td>{{teacher11}}</td>  
+                            <td>{{grade11}}</td>              
+                            <td>{{point11}}</td>
+                            <td>{{room11}}</td>
+                            <td>星期{{day11}}/{{start11}}-{{end11}}</td>
+                            <td>{{information11}}</td>
+                            
+                        </tr>
+                                  
+                        <tr>
+                            <td>{{code12}}</td> 
+                            <td>{{field12}}</td>
+                            <td>{{name12}}</td>   
+                            <td>{{teacher12}}</td>  
+                            <td>{{grade12}}</td>              
+                            <td>{{point12}}</td>
+                            <td>{{room12}}</td>
+                            <td>星期{{day12}}/{{start12}}-{{end12}}</td>
+                            <td>{{information12}}</td>
+                            
+                        </tr>
+
+                                    
+                        <tr>
+                            <td>{{code13}}</td> 
+                            <td>{{field13}}</td>
+                            <td>{{name13}}</td>   
+                            <td>{{teacher13}}</td>  
+                            <td>{{grade13}}</td>              
+                            <td>{{point13}}</td>
+                            <td>{{room13}}</td>
+                            <td>星期{{day13}}/{{start13}}-{{end13}}</td>
+                            <td>{{information13}}</td>
+                           
+                        </tr>
+                                   
+                        <tr>
+                            <td>{{code14}}</td> 
+                            <td>{{field14}}</td>
+                            <td>{{name14}}</td>   
+                            <td>{{teacher14}}</td>  
+                            <td>{{grade14}}</td>              
+                            <td>{{point14}}</td>
+                            <td>{{room14}}</td>
+                            <td>星期{{day14}}/{{start14}}-{{end14}}</td>
+                            <td>{{information14}}</td>
+                            
+                        </tr>
+                                     
+                        <tr>
+                            <td>{{code15}}</td>
+                            <td>{{field15}}</td>
+                            <td>{{name15}}</td>   
+                            <td>{{teacher15}}</td>  
+                            <td>{{grade15}}</td>              
+                            <td>{{point15}}</td>
+                            <td>{{room15}}</td>
+                            <td>星期{{day15}}/{{start15}}-{{end15}}</td>
+                            <td>{{information15}}</td>
+                            
+                        </tr>
+                       
+                       
+            </table>
+                    
+
+                </div>
+
+            </div> 
+        </div>
+    </body>
+</html> 

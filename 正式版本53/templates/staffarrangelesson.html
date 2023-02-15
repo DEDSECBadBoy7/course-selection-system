@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <meta charset="utf-8"/>
+        <title>國防大學選課系統</title>
+        <style type="text/css">
+            .head{
+                background-color:#003344;color:white;font-weight:bold;font-size:40px;
+                text-align:center;padding:10px
+            }
+            form>input,form>select{
+                padding:5px 25px;border-radius:5px; 
+            }
+         
+        </style>
+    </head>
+    <body style=" background-image:url('bgi.png');background-size:cover;margin:0px;"  >   
+        <div style="text-align:center;">
+            <div class="head">管理課程資料</div>
+            <span>
+                <img style="vertical-align:bottom" height="100" width="1550"src="/350.jpg" border="0">
+            </span>
+        </div>    
+
+        <table align="center" valign="top" cellpadding="1" style="border-collapse:collapse;width:1000px;">
+            <td align="left"  style="background-color:#003344;color:white;font-size:30px;">
+            <form action = " /load  " method = "post" onsubmit ="alert('登入送出')" style="line-height:2em;">
+                <div style="font-size:35px;text-align:center;"><b>課程登入</b></div>  
+   
+                系籍:<select  name="department">
+                    <option value="">科系</option>
+                    <option value="法律系">法律系</option>
+                    <option value="資管系">資管系</option>
+                    <option value="財管系">財管系</option>
+                    <option value="運籌系">運籌系</option>
+                    <option value="無資料">無資料</option>
+                    <select>
+                年級:<select  name="grade">
+                    <option value="">年級</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="無資料">無資料</option>
+                    <select></br>
+                科系縮寫:<select  name="abbreviation">
+                    <option value="">科系縮寫</option>
+                    <option value="la">法</option>
+                    <option value="in">資</option>
+                    <option value="ma">運</option>
+                    <option value="ec">財</option>
+                    <option value="無資料">無資料</option>
+                    <select>       
+                課程編碼:<select  name="code">
+                    <option value="">編碼</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="無資料">無資料</option>
+                    <select>         
+                課程日期:<select  name="day">
+                    <option value="">日期</option>
+                    <option value="一">一</option>
+                    <option value="二">二</option>
+                    <option value="三">三</option>
+                    <option value="四">四</option>
+                    <option value="五">五</option>
+                    <option value="無資料">無資料</option>
+                    <select><br>                      
+                課程開始:<select  name="start">
+                    <option value="">初始課堂</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="無資料">無資料</option>
+                    <select>
+                課程結束:<select  name="end">
+                    <option value="">結束課堂</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option> 
+                    <option value="無資料">無資料</option> 
+                    <select> 
+                課程領域:<select  name="field">
+                    <option value="">領域</option>
+                    <option value="國防">國防</option>
+                    <option value="自然">自然</option>
+                    <option value="語文">語文</option>
+                    <option value="社會">社會</option>
+                    <option value="管理">管理</option>
+                    <option value="文史">文史</option>
+                    <option value="系選修">系選修</option>
+                    <option value="系必修">系必修</option>
+                    <option value="無資料">無資料</option>
+                    <select></br>          
+
+                課程名稱:<input type ="text"name="name"  />  
+
+                課程學分:<input type ="text"name="point"  /></br>
+
+                課程教師:<input type ="text"name="teacher"  />
+           
+                課程教室:<input type ="text"name="room"  /></br>
+              
+                課程介紹:<input type ="text"name="information"   />
+
+              
+                <div style="margin:10px">
+                    <span>
+                        <input class="button text " type="submit" value="確定" name="B1">
+                    </span>
+                    <div><a style="color:white;" href = "/staffmember">返回</a></div>
+                </div>
+            </form>  
+        </table>
+    </body>
+</html>
+
+	 

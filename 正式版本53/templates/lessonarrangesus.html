@@ -1,0 +1,115 @@
+<!DOCTYPE HTML> 
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>註冊通知</title>
+        <script type ="text/javascript">
+            function over(element){
+                element.style.color="red";
+            }
+            function out(element){
+                element.style.color="black"; 
+            }
+            var dialog;
+            window.onload=function(){
+                dialog=document.getElementById("dialog");
+            };
+            function showdialog(){
+                dialog.style.display="block";
+            }
+            function closedialog(){
+                dialog.style.display="none";
+            }
+        </script>
+        <style type="text/css">
+            .head{
+                background-color:#003344;color:white;font-weight:bold;font-size:40px;
+                text-align:center;padding:10px
+            } 
+            table{
+                width:900px;border:2px solid #888888;
+            }
+            td{
+                border:2px solid #888888;padding:10px;
+            }
+            tr:nth-child(1){
+                background-color:#7788aa;color:#ffffff;
+            }
+            tr:nth-child(even){
+                background-color:#e8e8e8;
+            }
+            .dialog{
+                position:fixed;top:250px;left:50%;transform:translate(-200px,0px);width:400px;padding:10px;
+                border:3px solid #888888;background-color:#eeeeee;box-shadow:0px 0px 10px #000000;
+                display:none;
+            }
+            .dialog>.close{
+                position:absolute;top:2px;right:2px;cursor:pointer;color:red;
+            }
+
+        </style>
+    </head>
+    <body style=" margin:0px; background-image:url('bgi.png');background-size:cover;"       >
+        <div style="text-align:center;">
+            <div class="head">課程登入成功</div>
+            <span>
+                <img style="vertical-align:bottom" height="100" width="1550"src="/350.jpg" border="0">
+            </span>
+        </div>
+        <center><h1>新增課程內容</h1></center>
+        <div id="dialog" class="dialog">
+            <div onclick="closedialog();" class ="close">X</div>   
+                {{information}}
+        </div></br>
+        <div  id="box"   class ="box"  >
+            <table align="center" border="1" width="200">                                                
+                <tr>
+                    <td>編碼</td> 
+                    <td>類別</td>
+                    <td>科系</td> 
+                    <td>科目</td>                           
+                    <td>年級</td>
+                    <td>學分</td>
+                    <td>教室</td>
+                    <td>老師</td>
+                    <td>科系縮寫</td>
+                    <td>日期</td>
+                    <td>節次</td>
+                    <td>相關資料</td>
+                   
+                </tr>
+                <tr>
+                    <td>{{abbreviation}}{{grade}}{{code}}</td>
+                    <td>{{field}}</td>
+                    <td>{{department}}</td> 
+                    <td>{{name}}</td>                           
+                    <td>{{grade}}</td>  
+                    <td>{{point}}</td>
+                    <td>{{room}}</td>
+                    <td>{{teacher}}</td>
+                    <td>{{abbreviation}}</td>
+                    <td>星期{{day}}</td>
+                    <td>{{start}}-{{end}}</td>
+                    <td onmouseover="over(this);" onmouseout="out(this)"; onclick="showdialog();">課程介紹</td>
+                </tr>
+            </table>
+        <center>
+        <div><a href = "/arrangelesson"><font size="6">返回</font><br></a></div>
+        <div><a href = "/staffmember"><font size="6">結束</font><br></a></div>
+        </center>
+    </body>
+</html>             
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <meta charset="utf-8"/>
+        <title>國防大學選課系統</title>
+        <style type="text/css">
+            .head{
+                background-color:#003344;color:white;font-weight:bold;font-size:60px;
+                text-align:center;padding:10px
+            }
+            form>input,form>select{
+                padding:30px 25px;border-radius:5px;
+            }
+
+        </style>
+    </head>
+    <body style=" background-image:background-size:cover;margin:0px;"  >
+        <div style="text-align:center;">
+            <div class="head">寄送選課通知信</div>
+            <!-- <span>
+                <img style="vertical-align:bottom" height="100" width="1550"  border="0">
+            </span> -->
+        </div>
+
+        <table align="center" valign="top" cellpadding="1" style="border-collapse:collapse;width:1000px;">
+            <td align="left"  style="background-color:#f8fbfc;color:white;font-size:30px;">
+                <form method="post" action= "/sendmail2">
+
+                    </div>
+                    <div style="margin:50px;">
+                        <span class="title">請輸入欲寄送通知電子信箱: </span>
+                        <input type="email" name="email" size="30"required placeholder="請輸入電子郵件地址">
+                        <span><input class="button text" type="submit" name="B1" onclick="resertpass()" value="提交" ></span>
+                        <span><input type="reset" value="清空"></span>
+
+                    </div>
+
+                    <span> <input type="button"  value="返回"  onclick="location.href='/ ' "></span>
+
+                </from>
+        </table>
+    </body>
+</html>
+

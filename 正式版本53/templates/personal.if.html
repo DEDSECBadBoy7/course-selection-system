@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <meta charset="utf-8"/>
+        <title>註冊通知</title>
+        <script type ="text/javascript">
+        
+        </script>
+        <style type="text/css">
+            .head{
+                background-color:#003344;color:white;font-weight:bold;font-size:40px;
+                text-align:center;padding:10px
+            } 
+  
+            .frame{
+                justify-content:center;
+                display:flex;      /*讓項目水平*/
+            }   
+            .left{
+                background-color:#003344;
+                flex:none;             /*固定配置:參考寬度*/
+                width:20%;
+            }
+            .right{
+                background-color:#cccccc;
+                flex:none;             /*固定配置:參考寬度*/
+                width:59%; 
+                display:flex;      /*讓項目水平*/
+            } 
+            .rightthing{
+                flex:none;             /*固定配置:參考寬度*/
+                width:100%; 
+            } 
+            table{
+          
+                width:900px;border:2px solid #888888;
+            }
+            td{
+                border:2px solid #888888;padding:10px;
+            }
+            tr:nth-child(1){
+                background-color:#7788aa;color:#ffffff;
+            }
+            tr:nth-child(even){
+                background-color:#e8e8e8;
+            }
+            .box{
+                border:3px solid red; 
+            }    
+        </style>
+    </head>
+    <body style=" margin:0px; background-image:url('bgi.png');background-size:cover;" >   
+        <div class="head">個人檔案</div>
+        <img style="vertical-align:bottom" height="100" width="100%" src="/350.jpg">
+  
+        <div class="frame">
+
+            <div class="left">
+                <div style="text-align:center;color:white;">
+                    <div style="color:white;font-size:40px"><h3>個人資訊<h3></div>
+                        
+                    <div><h3><u><a style="color:white;font-size:30px" href="/personal.if">個人資料</a></u><h3></div>
+                    <div><h3><u><a style="color:white;font-size:30px" href="/personal.lesson">課程清單</a></u><h3></div>   
+                    
+                    <div><a style="color:white;" href = "/member"><button>返回首頁</button></a></div>
+                </div>
+                
+            </div>
+           
+
+            <div class="right">
+
+                <div class="rightthing">
+
+                    <table>                                                
+                        <tr>
+                            <td>姓名</td>                           
+                            <td>系籍</td>
+                            <td>年級</td>
+                            <td>性別</td>
+                            <td>學號</td>
+
+                            
+                        </tr>
+                        <tr>
+                            <td> {{nickname}}</td>                           
+                            <td>{{department}}</td>  
+                            <td>{{grade}}</td>
+                            <td > {{gender}}</td>
+                            <td >{{idnumber}}</td>
+                           
+                        </tr>
+                    </table>
+                    <table>                                                
+                        <tr>
+                            <td>生日</td>
+                            <td>電話</td>
+                            <td>住家</td>
+                            <td>累積學分</td>
+                        </tr>
+                        <tr>
+                            <td >{{year}}年{{month}}月{{day}}日</td>
+                            <td > {{phone}}</td>
+                            <td > {{address}}</td>
+                            <td>{{pointall}}</td> 
+                        </tr>
+                    </table>   
+                </div>
+            </div>    
+        </div> 
+    </body>
+</html> 
+            
+    

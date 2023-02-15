@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <meta charset="utf-8"/>
+        <title>註冊通知</title>
+        <script type ="text/javascript">
+            
+        </script>
+        <style type="text/css">
+            .head{
+                background-color:#003344;color:white;font-weight:bold;font-size:40px;
+                text-align:center;padding:10px
+            } 
+  
+            .frame{
+                justify-content:center;
+                display:flex;      /*讓項目水平*/
+            }   
+            .left{
+                background-color:#003344;
+                flex:none;             /*固定配置:參考寬度*/
+                width:20%;
+            }
+            .right{
+                background-color:#cccccc;
+                flex:none;             /*固定配置:參考寬度*/
+                width:59%; 
+                display:flex;      /*讓項目水平*/
+            } 
+            .rightthing{
+                flex:none;             /*固定配置:參考寬度*/
+                width:100%; 
+            } 
+            table{
+          
+                width:900px;border:2px solid #888888;
+            }
+            td{
+                border:2px solid #888888;padding:10px;
+            }
+            tr:nth-child(1){
+                background-color:#7788aa;color:#ffffff;
+            }
+            tr:nth-child(even){
+                background-color:#e8e8e8;
+            }
+            .box{
+                border:3px solid red; 
+            }
+        </style>
+    </head>
+    <body style=" margin:0px; background-image:url('bgi.png');background-size:cover;" >   
+        <div class="head">本學期開課課程</div>
+       
+        <img style="vertical-align:bottom" height="100" width="100%" src="/350.jpg">
+  
+        <div class="frame">
+
+            <div class="left">
+
+                <div style="text-align:center;color:white;">
+                    <div style="font-size:40px"><h3><u>課程資訊</u><h3></div>
+                    
+                    <div><a style="color:white" href = "/member"><button>返回</button></a></div>
+                </div>
+            </div>
+
+            <div class="right">
+
+                <div class="rightthing">
+
+                    <table>                                                
+                    
+                                                                      
+                                <tr>
+                                    <td>課程代碼</td> 
+                                    <td>領域</td>
+                                    <td>科目</td> 
+                                    <td>老師</td>                          
+                                    <td>年級</td>
+                                    <td>學分</td>
+                                    <td>教室</td>
+                                    <td>節次</td>
+                                    <td>課程介紹</td>
+
+                                </tr>
+                                {% for doc in cur %}      
+                                <tr>
+                                    <td>{{doc["code"]}}</td> 
+                                    <td>{{doc["field"]}}</td> 
+                                    <td>{{doc["name"]}}</td>   
+                                    <td>{{doc["teacher"]}}</td>  
+                                    <td>{{doc["grade"]}}年級</td>              
+                                    <td>{{doc["point"]}}</td>
+                                    <td>{{doc["room"]}}</td>
+                                    <td>星期{{doc["day"]}}/{{doc["start"]}}-{{doc["end"]}}</td>
+                                    <td>{{doc["information"]}}</td>   
+                                </tr>
+                                
+                                {% endfor %}
+                    
+            
+                       
+                    </table>   
+                </div>
+            </div>    
+        </div> 
+    </body>
+</html> 

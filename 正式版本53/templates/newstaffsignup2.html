@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <title>國防大學選課系統</title>
+        <style type="text/css">
+        .head{
+            background-color:#003344;color:white;font-weight:bold;font-size:40px;
+            text-align:center;padding:10px
+        }
+        form>input{
+            padding:5px 25px; 
+        }
+        form>.ok{
+           color:#008800;
+        }
+        form>input:valid+.ok{
+            display:inline;
+        }
+        form>input:invalid+.ok{
+            display:none;
+        }
+        </style>
+    </head>
+    <body style="margin:0px;font-size:30px;background-image:url('bgi.png');background-size:cover;;margin:0px;"  >   
+        <div class="head">授權註冊</div>      
+        <table align="center" valign="top" cellpadding="1" style="border-collapse:collapse;width:1000px;">
+            <span>
+                <img style="vertical-align:bottom;margin-left:258px;border:1px solid #003344 ;" height="350" width="1000"src="/234.jpg" border="0">
+            </span>
+  
+            
+            <td align="left" style="background-color:#003344;color:white;font-size:30px;">
+            <form action = "/staffsignup2" method = "post" onsubmit ="alert('註冊送出')" style="line-height:2em;">
+                <div style="font-size:35px;text-align:center;"><b>授權註冊</b></div>  
+   
+                姓名:<input type="text" onkeyup="this.value=this.value.replace(/[^\u4e00-\u9fa5]/g,'')" name="nickname" required placeholder= "請輸入中文" />
+                  <span class="ok">ok</span></br>
+                  
+              
+                行政代碼:<input type ="text"name="staffnumber" required placeholder="請輸入行政代碼" />
+                  <span class="ok">ok</span></br>
+
+                密碼:<input type ="password"name="password" required placeholder="請輸入數字及大小寫英文"pattern="[0-9 a-z A-Z]{10,20}"/>
+                  <span class="ok">ok</span></br>
+                  
+                       
+                 
+
+                <div><img style="width:350px; height:280px;position:absolute;top:470px;right:300px;" src="007.jpg"></img></div>         
+                <div style="margin:10px">
+                    <span>
+                        <input class="button text " type="submit" value="確定" name="B1">
+                    </span>
+                    <div><a style="color:white;onclick="alert('登出');" href="/staffsignout2"><b>登出系統<b></a></div>
+                </div>
+                
+            </form>  
+        </table>
+    </body>
+</html>

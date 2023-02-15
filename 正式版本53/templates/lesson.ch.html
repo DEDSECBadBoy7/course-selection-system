@@ -1,0 +1,170 @@
+<!DOCTYPE HTML> 
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <meta charset="utf-8"/>
+        <title>課程加選</title>
+        <script type ="text/javascript">
+            function over(element){
+                element.style.color="red";
+            }
+            function out(element){
+                element.style.color="black"; 
+            }
+            var dialog;
+            window.onload=function(){
+                dialog=document.getElementById("dialog");
+            };
+            function showdialog(){
+                dialog.style.display="block";
+            }
+            function closedialog(){
+                dialog.style.display="none";
+            }
+        </script>
+        <style type="text/css">
+            .head{
+                background-color:#003344;color:white;font-weight:bold;font-size:40px;
+                text-align:center;padding:10px
+            } 
+    
+            .frame{
+                justify-content:center;
+                display:flex;      /*讓項目水平*/
+                text-align:center
+            }   
+            .left{
+                background-color:#003344;
+         
+                flex:none;             /*固定配置:參考寬度*/
+                width:20%;
+            }
+            .right{
+                background-color:#cccccc;
+                flex:none;             /*固定配置:參考寬度*/
+                width:59%; 
+                
+            } 
+            .rightthing{
+                flex:none;             /*固定配置:參考寬度*/
+                width:100%; 
+                
+            }
+            
+            table{
+          
+                width:900px;border:2px solid #888888;
+               
+            }
+            td{
+                border:2px solid #888888;padding:10px;
+            }
+            tr:nth-child(1){
+                background-color:#7788aa;color:#ffffff;
+            }
+            tr:nth-child(even){
+                background-color:#e8e8e8;
+            }
+            .box{
+                border:3px solid red; 
+            } 
+            form>select{
+                padding:5px 25px;border-radius:5px; 
+            } 
+            .dialog{
+                position:fixed;top:250px;left:50%;transform:translate(-200px,0px);width:400px;padding:10px;
+                border:3px solid #888888;background-color:#eeeeee;box-shadow:0px 0px 10px #000000;
+                display:none;
+            }
+            .dialog>.close{
+                position:absolute;top:2px;right:2px;cursor:pointer;color:red;
+            }
+
+
+            
+
+        </style>
+    </head>
+    <body style=" margin:0px; background-image:url('bgi.png');background-size:cover;" >   
+        <div class="head">課程加選</div>
+        <img style="vertical-align:bottom" height="100" width="100%" src="/350.jpg">
+    
+        <div class="frame">
+  
+            <div class="left">
+                <div style="text-align:center;color:white;">
+                    <tr style="color:white;font-size:20px">
+                            <tr>
+                                <td><font size="6"><b>累積學分:</b></font></td>
+                            </tr>
+                            <tr>
+                               <td><font  size="6"><b>{{pointall}}</b></font></td> 
+                            </tr> 
+                    <div><h3><u style="font-size:40px" href="/lesson.ch" >課程加選</u><h3></div>
+                    <div><h3><u><a style="color:white;font-size:40px" href="/lesson.delete">課程退選</a></u><h3></div>    
+                    
+                    <div><a style="color:white;font-size:40px" href = "/member"><button>返回首頁</button></a></div>
+                </div>
+            </div>
+            
+       
+
+            <div class="right">
+                <div class="rightthing">
+                    <form action = " /lessonin1 " method = "post" id="myform1"></form> 
+                    <form action = " /lessonin2 " method = "post" id="myform2"></form> 
+                    <form action = " /lessonin3  " method = "post" id="myform3"></form> 
+                    <form action = " /lessonin4 " method = "post" id="myform4"></form> 
+                    <form action = " /lessonin5 " method = "post" id="myform5"></form> 
+                    <form action = " /lessonin6 " method = "post" id="myform6"></form> 
+                    <form action = " /lessonin7 " method = "post" id="myform7"></form> 
+                    <form action = " /lessonin8  " method = "post" id="myform8"></form> 
+                    <form action = " /lessonin9 " method = "post" id="myform9"></form> 
+                    <form action = " /lessonin10 " method = "post" id="myform10"></form> 
+                    <form action = " /lessonin11 " method = "post" id="myform11"></form> 
+                    <form action = " /lessonin12 " method = "post" id="myform12"></form> 
+                    <form action = " /lessonin13  " method = "post" id="myform13"></form> 
+                    <form action = " /lessonin14 " method = "post" id="myform14"></form> 
+                    <form action = " /lessonin15 " method = "post" id="myform15"></form> 
+                    
+                    <table>                                                                            
+                                <tr>
+                                    <td>課程代碼</td>
+                                    <td>領域</td> 
+                                    <td>科目</td> 
+                                    <td>老師</td>                          
+                                    <td>年級</td>
+                                    <td>學分</td>
+                                    <td>教室</td>
+                                    <td>節次</td>
+                                    <td>課程介紹</td>
+                                    <td>加選</td>
+                                </tr>
+                                {% for doc in cur %} 
+                                <tr>   
+                                    <td>{{doc["abbreviation"]}}{{doc["grade"]}}{{doc["code"]}}</td> 
+                                    <td>{{doc["field"]}}</td>
+                                    <td>{{doc["name"]}}</td> 
+                                    <td>{{doc["teacher"]}}</td> 
+                                    <td>{{doc["grade"]}}年級</td>       
+                                    <td>{{doc["point"]}}</td>   
+                                    <td>{{doc["room"]}}</td>
+                                    <td>星期{{doc["day"]}}/{{doc["start"]}}-{{doc["end"]}}</td>
+                                    <td>{{doc["information"]}}</td>
+                                    <!--<td onmouseover="over(this);" onmouseout="out(this)"; onclick="showdialog();">課程介紹</td>-->
+                                <!--<div id="dialog" class="dialog">
+                                        {{doc["information"]}}
+                                        <div onclick="closedialog();" class ="close">X</div>
+                                    </div>-->
+                                    <td><input onmouseover="over(this);" onmouseout="out(this);" onclick="alert('加選成功');"  type="submit"  value={{doc["code"]}} form="myform{{doc["code"]}}" name="newcode{{doc["code"]}}"/></td>
+                                {% endfor %}
+                                
+                    </table>
+                </div>
+            </div>
+          
+
+        </div>
+    </body>
+</html> 
+    

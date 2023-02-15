@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>行政人員系統首頁</title>
+        <meta http-equiv="Content-Type" content=text/html; charset="utf-8">
+        <link rel="stylesheet" href="inc/main.css">
+        <style type="text/css">
+            .head2{
+               background-color:#003344;color:white;font-weight:bold;font-size:40px;
+               text-align:center;padding:10px
+            }
+        </style>
+    </head>
+    <body style="margin:0px;font-size:30px;background-image:url('bgi.png');background-size:cover;;margin:0px;" >
+        <div class="head2">行政人員系統首頁</div>
+            <table align="center" valign="top" cellspacing="0" cellpadding="1" style="border-collapse:collapse">
+                <tbody>
+                <tr valign="bottom">
+                    <td align="center">
+                        <img style="vertical-align:bottom" height="350" width="362" src="head.jpg" border="0">
+                    </td>
+                    <td>
+                        <img style="vertical-align:bottom" height="350" width="650" src="head3.jpg" border="0"> 
+                    </td>
+                </tr>
+            <div>
+            
+            
+            <tr>
+                <td valign="top" style="background-color:#99ccff;border:1px solid #f5f5f5;">
+                <div style="min-width:150px">
+                    <table border="0" cellspacing="0" cellpadding="1">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <span>
+                                    <h2>行政人員頁面</h2>
+                                    <h3>歡迎光臨來到登入系統</h3>
+                                    <div><b>您好,{{nickname}}同事</b> <span style="position:absolute;right:910px;" onclick="alert('登出')"><a href="/staffsignout"><b>登出系統<b></a></span></div>    
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <details open>
+                                    <summary><dt>權限設定</dt></summary> 
+                                    <dd><a href=' /arrangelesson ' target='w3'>》新增課程資料</a></dd>
+                                    <dd><a href=' /deletelesson ' target='w3'>》註銷課程資料</a></dd>
+                                    <dd><a href=' /arrangestudentlaw ' target='w3'>》管理學生資料</a></dd>
+                                    <dd><a href=' /arrangeaccount' target='w3'>》管理學生帳號</a></dd>
+                                    <dd><a href=' /sendmail' target='w3'>》寄送選課通知信</a></dd>
+                                </details>
+                                        </td>
+                                    </tr>
+                                <tr>
+                                    <td>
+                                <details open>
+                                    <summary><dt>瀏覽本學期課程</dt></summary> 
+                                    <dd><a href=' /stafflessoninformation.se ' target='w2'>》資訊管理學系</a></dd>
+                                    <dd><a href=' /stafflessonlaw.se ' target='w2'>》法律學系</a></dd>
+                                    <dd><a href=' /stafflessonmanage.se ' target='w2'>》運籌管理學系</a></dd>
+                                    <dd><a href=' /stafflessoneconomic.se ' target='w2'>》財務管理學系</a></dd>
+                                </details>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </td>
+                <td valign="top" style="background-color:#003344;border:1px solid #f5f5f5;">
+                </td>
+            </tr>
+                </tbody>
+            </table>
+            </div>
+
+
+
+            <div style="background-color:white;width:370px;border:1px solid #003344;padding:10px;position:absolute;top:480px;right:380px;">
+
+                <script language="javascript">
+                //---------------------------------------------------------------------------------------------------------------------------------
+                var my = new Date();
+                
+                
+                
+                function showc() {
+                
+                var k=1;
+                
+                var j=1;
+                
+                var today;
+                
+                var tomonth;
+                
+                var theday=1;//日期
+                
+                var max;
+                
+                var temp;
+                
+                var tempday;//這個月第一天的星期
+                
+                document.write ("<b>" + my.getFullYear() + "-" + (my.getMonth()+1) + "</b>");
+                
+                document.write ("<table border='1' width='273' height='158'>");
+                
+                document.write ("<tr>");
+                
+                document.write ("<td height='23' width='39'><font color='red'>Sun</td>");
+                
+                document.write ("<td height='23' width='39'>Mon</td>");
+                
+                document.write ("<td height='23' width='39'>Tue</td>");
+                
+                document.write ("<td height='23' width='39'>Wed</td>");
+                
+                document.write ("<td height='23' width='39'>Thu</td>");
+                
+                document.write ("<td height='23' width='39'>Fri</td>");
+                
+                document.write ("<td height='23' width='39'>Sat</td>");
+                
+                document.write ("</tr>");
+                
+                temp=my.getDate();
+                
+                my.setDate(1);
+                
+                //document.write (my.getDate());
+                
+                tempday=my.getDay();//返回第一天是星期幾
+                
+                my.setDate(temp);
+                
+                today=my.getDay();//返回現在星期幾
+                
+                
+                
+                switch ((my.getMonth()+1)) {
+                
+                case 1:
+                
+                case 3:
+                
+                case 5:
+                
+                case 7:
+                
+                case 8:
+                
+                case 10:
+                
+                case 12:
+                
+                max=31;
+                
+                break;
+                
+                case 4:
+                
+                case 6:
+                
+                case 9:
+                
+                case 11:
+                
+                max=30;
+                
+                break;
+                
+                default:
+                
+                max=29;//這裡沒有考慮閏月!!
+                
+                //document.write (max);
+                
+                }
+                
+                for(k=0;k<6;k++) {
+                
+                document.write ("<tr>");
+                
+                for(j=0;j<=6;j++) {
+                
+                document.write ("<td height='23' width='39'>");
+                
+                if(j>=(tempday)) {
+                
+                tempday=0;//設定為最小,相當於取消判斷條件
+                
+                if(theday<=max) {
+                
+                document.write ("<a title=" + my.getFullYear() + "-" + (my.getMonth()+1) + "-" +theday +  ">");
+                
+                if(theday==my.getDate())
+                
+                document.write ("<font color='green'>[" + theday + "]</a>");
+                
+                else if(j==0)
+                
+                document.write ("<font color='red'>" + theday + "</a>");
+                
+                else
+                
+                document.write (theday + "</a>");
+                
+                theday++;
+                
+                }
+                
+                }
+                
+                document.write ("</td>");
+                
+                }
+                
+                document.write ("</tr>");
+                
+                }
+                
+                document.write ("</table>");
+                
+                }
+                
+                showc();
+                //-----------------------------------------------------------------------------------------------------------------------------
+                </script>
+            </div>
+            
+            
+
+    </body>
+</html> 
+

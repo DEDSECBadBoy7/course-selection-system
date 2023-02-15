@@ -1,0 +1,224 @@
+<!DOCTYPE HTML> 
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <meta charset="utf-8"/>
+        <title>學生資料</title>
+        <script type ="text/javascript">
+            function over(element){
+                element.style.color="red";
+            }
+             function out(element){
+                element.style.color="black"; 
+            }
+        </script>
+        <style type="text/css">
+            .head{
+                background-color:#003344;color:white;font-weight:bold;font-size:40px;
+                text-align:center;padding:10px;width:100%;
+            } 
+    
+            .frame{
+                display:flex;            /*讓下一層項目水平排列*/
+                justify-content:center;/*讓下一層項目水平置中*/
+            }   
+            .left{
+                flex:none;             /*固定配置:參考寬度*/
+                width:33%;
+                display:flex;      /*讓下一層項目水平*/
+                justify-content:center;/*讓下一層項目水平置中*/
+                background-color:#003344;
+            }
+            .right{
+                flex:none;               /*固定配置:參考寬度*/
+                width:60%;
+                display:flex;      /*讓下一層項目水平*/
+                justify-content:center;/*讓下一層項目水平靠右*/
+                text-align:center;
+                background-color:#666666;
+                
+            }   
+            .item{
+                flex:none;             /*固定配置:參考寬度*/
+                width:150px; 
+                text-align:center;
+                font-size:35px;
+                background-color:white;
+                
+                margin-right:5px;
+            }
+            .item2{
+                text-align:center;
+                font-size:35px;
+                
+                margin-bottom:50px;
+                background-color:rgb(249, 251, 255);
+            }
+        
+            .left2{
+                flex:none;             /*固定配置:參考寬度*/
+                width:33%;
+                
+                background-color:#99BBFF;
+               
+            }
+            .right2{
+                flex:none;               /*固定配置:參考寬度*/
+                width:60%;
+                text-align:center;
+                background-color:#e5eeed;
+            } 
+            table{
+                width:100%;border:2px solid #888888;
+            }
+            td{
+                border:2px solid #888888;padding:10px;
+            }
+            tr:nth-child(1){
+                background-color:#7788aa;color:#ffffff;
+            }
+            tr:nth-child(even){
+                background-color:#e8e8e8;
+            }
+            .box{
+                border:3px solid rgb(54, 2, 242); 
+            } 
+            
+        </style>
+    </head>
+    <body style=" margin:0px; background-image:url('bgi.png');background-size:cover;" >   
+        <div class="head">資訊管理學系學生資料 </div>
+        <img style="vertical-align:bottom" height="100" width="100%" src="/350.jpg">
+    
+
+        <div class="frame">
+            <div class="left">
+                <div><a style="color:white;font-size:30px"href = "/staffmember">返回</a></div> 
+            </div>
+
+            <div class="right"style="color:white;font-size:40px" >
+                資訊管理學系學生資料
+            </div>
+        </div>
+
+
+        <div class="frame">
+            <div class="left2">
+                <form action = " /searchaccountinformation " method = "post" onsubmit ="alert('登入送出')" style="line-height:2em;">
+                    <div style="font-size:35px;text-align:center;"><b>帳號搜尋</b></div> 
+                    學號:<input type ="text" name="idnumber" required placeholder="請輸入學號"pattern="[0-9]{10,20}"/><input class="button text " type="submit" value="搜尋">
+                    <table> 
+                        
+                        <tr>
+                            <td>姓名</td>                           
+                            <td>系籍</td>
+                            <td>年級</td>
+                            <td>性別</td>
+                            <td>學號</td>
+                            <td>電話</td>
+                        </tr>
+                        <tr>
+                            <td>{{nickname}}</td>                           
+                            <td>{{department}}</td>
+                            <td>{{grade}}</td>
+                            <td>{{gender}}</td>
+                            <td>{{idnumber}}</td>
+                            <td>{{phone}}</td>   
+                        </tr>
+                    </table>
+                </form> 
+                <div style="text-align:center;color:#003344(226, 221, 238, 0.396);">
+                    <ul>
+                        <li class="item2"><a href=' /arrangestudentlaw ' target='w3'>法律學系</a></li>
+                    </ul>
+                </div>
+                <div style="text-align:center;color:#003344(226, 221, 238, 0.396);">
+                    <ul>
+                        <li class="item2"><a href=' /arrangestudentinformation ' target='w3'>資訊管理學系</a></li>
+                    </ul>
+                </div>
+                <div style="text-align:center;color:#003344(226, 221, 238, 0.396);">
+                    <ul>
+                        <li class="item2"><a href='/arrangestudentmanage ' target='w3'>運籌管理學系</a></li>
+                    </ul>
+                </div>
+                <div style="text-align:center;color:#003344(226, 221, 238, 0.396);">
+                    <ul>
+                        <li class="item2"><a href='/arrangestudenteconomic' target='w3'>財務管理學系</a></li>
+                    </ul>
+                </div>
+            </div>
+       
+            <div class="right2">
+                <div  id="box"   class ="box"  >   
+                    <table> 
+                        <tr>
+                            
+                                <td>姓名</td>                           
+                                <td>系籍</td>
+                                <td>年級</td>
+                                <td>性別</td>
+                                <td>學號</td>
+                                <td>生日</td>
+                                <td>電話</td>
+                                <td>住家</td>
+                            
+                        </tr>
+                        {% for doc in curin1 %}
+                        <tr>
+                            <td> {{doc["nickname"]}}</td>                           
+                            <td>{{doc["department"]}}</td>  
+                            <td>{{doc["grade"]}}</td>
+                            <td > {{doc["gender"]}}</td>
+                            <td >{{doc["idnumber"]}}</td>
+                            <td >{{doc["year"]}}年{{doc["month"]}}月{{doc["day"]}}日</td>
+                            <td > {{doc["phone"]}}</td>
+                            <td > {{doc["address"]}}</td>
+                        </tr>
+                        {% endfor %}
+                        {% for doc in curin2 %}
+                        <tr>
+                            <td> {{doc["nickname"]}}</td>                           
+                            <td>{{doc["department"]}}</td>  
+                            <td>{{doc["grade"]}}</td>
+                            <td > {{doc["gender"]}}</td>
+                            <td >{{doc["idnumber"]}}</td>
+                            <td >{{doc["year"]}}年{{doc["month"]}}月{{doc["day"]}}日</td>
+                            <td > {{doc["phone"]}}</td>
+                            <td > {{doc["address"]}}</td>
+                        </tr>
+                        {% endfor %}
+                        {% for doc in curin3 %}
+                        <tr>
+                            <td> {{doc["nickname"]}}</td>                           
+                            <td>{{doc["department"]}}</td>  
+                            <td>{{doc["grade"]}}</td>
+                            <td > {{doc["gender"]}}</td>
+                            <td >{{doc["idnumber"]}}</td>
+                            <td >{{doc["year"]}}年{{doc["month"]}}月{{doc["day"]}}日</td>
+                            <td > {{doc["phone"]}}</td>
+                            <td > {{doc["address"]}}</td>
+                        </tr>
+                        {% endfor %}
+                        {% for doc in curin4 %}
+                        <tr>
+                            <td> {{doc["nickname"]}}</td>                           
+                            <td>{{doc["department"]}}</td>  
+                            <td>{{doc["grade"]}}</td>
+                            <td > {{doc["gender"]}}</td>
+                            <td >{{doc["idnumber"]}}</td>
+                            <td >{{doc["year"]}}年{{doc["month"]}}月{{doc["day"]}}日</td>
+                            <td > {{doc["phone"]}}</td>
+                            <td > {{doc["address"]}}</td>
+                        </tr>
+                        {% endfor %}
+                       
+                    </table>     
+                </div>
+            </div> 
+        </div>
+
+
+    </body>
+</html> 
+    

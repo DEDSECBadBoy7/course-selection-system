@@ -1,0 +1,167 @@
+<!DOCTYPE HTML> 
+<html> 
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=big5"> 
+        <title>國防大學選課系統</title>
+        <style type="text/css">
+            .head{
+              background-color:#003344;color:white;font-weight:bold;font-size:40px;
+              text-align:center;padding:10px
+            }
+
+            form>input,form>select{
+              padding:5px 25px;border-radius:5px; 
+            }
+            form>.ok{
+              :#008800;
+            }
+            form>input:valid+.ok{
+              display:inline;
+            }
+            form>input:invalid+.ok{
+            display:none;
+            }
+
+        </style>
+    </head>
+    <body style="background-image:url('bgi.png');background-size:cover;margin:0px;"  >   
+          <div class="head">學生選課系統註冊</div>      
+          <table align="center" valign="top" cellpadding="1" style="border-collapse:collapse;width:1000px;">
+              <span>
+                  <img style="vertical-align:bottom;margin-left:258px;border:1px solid #003344 ;" height="370" width="1000"src="/878.jpg" border="0">
+              </span>
+              <td align="left"  style="background-color:#003344;color:white;font-size:30px;">
+                  <form action = "/signup" method = "post" onsubmit ="alert('註冊送出')" style="line-height:2em;">
+                      <div style="font-size:35px;text-align:center;"><b>學生註冊</b></div> 
+                      年班:<input type ="text"name="yearclass" required placeholder="請輸入阿拉伯數字"pattern="[0-9]{2,3}"/>
+                          <span class="ok">ok</span></br>
+                      
+   
+                      姓名:<input type ="text"name="nickname" required placeholder="請輸入中文姓名"pattern="[\u4e00-\u9fa5]{2,}"/>
+                          <span class="ok">ok</span></br>
+              
+                      信箱:<input type ="email"name="email" required placeholder="請輸入信箱" />
+                          <span class="ok">ok</span></br>
+
+                      密碼:<input type ="password"name="password" required placeholder="請輸入數字及大小寫英文10碼"pattern="[0-9 a-z A-Z]{10,20}"/>
+                          <span class="ok">ok</span></br>  
+                          
+                      學號:<input type ="text"name="idnumber" required placeholder="請輸入學號"pattern="[0-9]{10,20}"/>
+                          <span class="ok">ok</span></br>  
+
+                      住家:<input type ="text"name="address" required placeholder="請輸入住家地址"pattern="[\u4e00-\u9fa5 0-9 ]{2,}"/>
+                          <span class="ok">ok</span></br> 
+                          
+                      電話:<input type ="text"name="phone" required placeholder="請輸入住家電話"pattern="[0-9]{10,20}"/>
+                          <span class="ok">ok</span></br>
+                      生日:<select required name="year">
+                            <option value="">年</option>
+                            <option value="1993">1993</option>
+                            <option value="1994">1994</option>
+                            <option value="1995">1995</option>
+                            <option value="1996">1996</option>
+                            <option value="1997">1997</option>
+                            <option value="1998">1998</option>
+                            <option value="1999">1999</option>
+                            <option value="2000">2000</option>
+                            <option value="2001">2001</option>
+                            <option value="2002">2002</option>
+                            <option value="2003">2003</option>
+                            <option value="2004">2004</option>
+                            <option value="2005">2005</option>
+                            <option value="2006">2006</option>
+                            <option value="2007">2007</option>
+                            <option value="2008">2008</option>
+                            <select> 
+                            <select required name="month">
+                            <option value="">月</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <select>
+                            <select required name="day"> 
+                            <option value="">日</option>       
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>    
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="25">29</option>
+                            <option value="26">30</option>
+                            <option value="27">31</option>
+                            <select>               
+            <div><img style="width:400px; height:400px;position:absolute;top:520px;right:300px;" src="01.png"></img></div>         
+                      性別:
+                          男姓<input type="radio" name="gender" value="男性" required/>
+                          女姓<input type="radio" name="gender" value="女性" required/></br>
+                      系籍:<select required name="department">
+                          <option value="">科系</option>
+                          <option value="法律系">法律系</option>
+                          <option value="資管系">資管系</option>
+                          <option value="財管系">財管系</option>
+                          <option value="運籌系">運籌系</option>
+                          <select>
+                      年級:<select required name="grade">
+                          <option value="">年級</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <select></br>
+                   科系縮寫:<select required name="abbreviation">
+                            <option value="">科系縮寫</option>
+                            <option value="la">法</option>
+                            <option value="in">資</option>
+                            <option value="ma">運</option>
+                            <option value="ec">財</option>
+                        <select></br>    
+                      <div style="margin:10px">
+                          <span>
+                              <input class="button text " type="submit" value="確定" name="B1">
+                          </span>
+                          <div ><a style="color:white;" href = "/">返回</a></div>
+              </form>     
+        </table>
+
+        <div style="text-align:center;font-size:20px">
+            <p><strong>校址：</strong> <span>桃園市八德區興豐路1000號</span> <span>電話：( 03 ) 365-7447</span> <span>國軍聯合查號臺：( 03 )  380-1120</span></p>
+            <p><strong>指導老師：</strong> <span>陸軍行政上校</span> <span> 劉興漢教官</span></p>
+            <p>&nbsp;</p>
+        </div>
+
+    </body>
+</html>
+
+	 
